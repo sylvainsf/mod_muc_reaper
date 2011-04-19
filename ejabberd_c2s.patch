@@ -1,0 +1,23 @@
+--- ejabberd_c2s.erl	2010-12-13 11:21:26.000000000 +0000
++++ ../ejabberd_c2s.erl	2011-04-19 19:34:49.000000000 +0000
+@@ -1389,6 +1389,12 @@
+ 		StateData
+ 	end,
+     {next_state, StateName, NewStateData};
++%% Mod_muc_reaper disconnect handler
++handle_info(disconnect, _StateName, StateData) ->
++    send_text(StateData, ?STREAM_TRAILER),
++    {stop, normal, StateData};
++
++
+ handle_info({broadcast, Type, From, Packet}, StateName, StateData) ->
+     Recipients = ejabberd_hooks:run_fold(
+ 		   c2s_broadcast_recipients, StateData#state.server,
+@@ -1405,6 +1411,7 @@
+     fsm_next_state(StateName, StateData).
+ 
+ 
++
+ %%----------------------------------------------------------------------
+ %% Func: print_state/1
+ %% Purpose: Prepare the state to be printed on error log

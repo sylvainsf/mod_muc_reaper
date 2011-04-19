@@ -1,0 +1,6 @@
+Description: This ejabberd module causes all clients to reconnect when a member of the cluster goes down. This fixes inconsistant behavior in MUCs observed when an user on a surviving server is not notified that the process serving the MUC now resides on a new node. 
+Author: Sylvain Niles <sylvain.niles@gmail.com>
+Copyright: Cascadeo Corporation http://cascadeo.com/
+License: Creative Commons Attribution-ShareAlike CC BY-SA, please see http://creativecommons.org/licenses/by-sa/3.0/ for more info.
+Credit: Inspiration for the user kick feature patch to ejabberd_c2s comes from Jack Moffitt's post on mod_sunshine also licensed via CC BY-SA. http://metajack.im/2008/08/28/writing-ejabberd-modules-presence-storms/
+
