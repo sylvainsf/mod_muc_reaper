@@ -4,3 +4,4 @@ Copyright: Cascadeo Corporation http://cascadeo.com/
 License: Creative Commons Attribution-ShareAlike CC BY-SA, please see http://creativecommons.org/licenses/by-sa/3.0/ for more info.
 Credit: Inspiration for the user kick feature patch to ejabberd_c2s comes from Jack Moffitt's post on mod_sunshine also licensed via CC BY-SA. http://metajack.im/2008/08/28/writing-ejabberd-modules-presence-storms/
 
+To get full clustered behavior of MUCs all ejabberd nodes should have the same mnesia settings for the MUC tables and rooms should be persistent. 
